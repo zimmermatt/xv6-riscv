@@ -1,5 +1,6 @@
 // Shell.
 
+#include "kernel/param.h"
 #include "kernel/types.h"
 #include "user/user.h"
 #include "kernel/fcntl.h"
@@ -145,7 +146,8 @@ getcmd(char *buf, int nbuf)
 int
 main(void)
 {
-  static char buf[100];
+  // add 1 to ensure room for '\0'
+  static char buf[INPUT_BUF_SIZE + 1];
   int fd;
 
   // Ensure that three file descriptors are open.
