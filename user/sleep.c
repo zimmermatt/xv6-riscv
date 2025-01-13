@@ -25,7 +25,8 @@ main(int argc, char *argv[])
   int sleep_seconds = atoi(argv[sleep_arg_idx]);
   while(sleep_seconds-- > 0) {
     if (snore) printf("z");
-    sleep(1);
+    sleep(10); // comments in usertests.c indicate this `sleep()` takes the
+               // time to sleep in deciseconds
   }
 
   if (snore) printf("\n");
